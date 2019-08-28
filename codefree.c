@@ -19,18 +19,18 @@ int main(void)
 		{
 			perror("./shell");
 			free(buffer);
-			exit(0);
+			exit(-1);
 		}
-		token = strtok(buffer, " \n\t");
+		token = strtok(buffer, " \r\a\n\t");
 		exit_func(buffer);
 		if (fork() == 0)
 		{
 		execcheck = execve(token, argv, NULL);
 			if (execcheck == -1)
 			{
-			perror("./shell");
+				perror("./shell");
 				free(buffer);
-				exit(0);
+				exit(-1);
 			}
 		}
 		else
