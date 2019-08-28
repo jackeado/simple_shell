@@ -19,7 +19,7 @@ int main(void)
 		{
 			perror("./shell");
 			free(buffer);
-			exit(-1);
+			exit(0);
 		}
 		token = strtok(buffer, " \n\t");
 		exit_func(buffer);
@@ -30,7 +30,7 @@ int main(void)
 			{
 			perror("./shell");
 				free(buffer);
-				exit(-1);
+				exit(0);
 			}
 		}
 		else
