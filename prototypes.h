@@ -1,5 +1,5 @@
-#ifndef _INFINITY_H_
-#define _INFINITY_H_
+#ifndef _PROTOTYPES_H_
+#define _PROTOTYPES_H_
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -7,6 +7,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <strings.h>
+#include <limits.h>
+#include <signal.h>
 
 void ctrlc(int sig_num);
 extern char **environ;
