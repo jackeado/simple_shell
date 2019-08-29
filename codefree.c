@@ -21,7 +21,7 @@ int main(void)
 			free(buffer);
 			exit(-1);
 		}
-		token = strtok(buffer, " \r\a\n\t");
+		token = strtok(buffer, " \n\t");
 		exit_func(buffer);
 		if (fork() == 0)
 		{
