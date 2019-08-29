@@ -7,6 +7,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <strings.h>
+#include <limits.h>
+#include <signal.h>
 
 #define delim " \t\r\n"
 

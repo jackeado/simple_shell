@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 		execcheck = execve(token, argv, NULL);
 			if (execcheck == -1)
 			{
-			perror("./shell");
+				perror("./shell");
 				free(buffer);
 				exit(0);
 			}
