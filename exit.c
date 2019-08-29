@@ -12,4 +12,3 @@ int exit_func(char *my_str)
 	}
 	return (0);
 }
-
