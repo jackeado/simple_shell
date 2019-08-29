@@ -1,45 +1,45 @@
 #include "prototypes.h"
 /**
- * main - entry point of the program
- * @argc: number of arguments
- * @argv: arguments
- *
- * Return: return 0 if sucess
- */
-int main(int argc, char **argv)
+* main - entry point of the program
+* Return: return 0 if sucess
+*/
+int main(void)
 {
-	char *buffer = NULL,  *token;
+	char *buffer = NULL, *argv[] = {"", NULL}, *token;
 	size_t size = 0;
 	int status, others, execcheck;
-	(void)argc;
 
-	if (argv[1] != NULL)
+	if (buffer != 1)
 	{
-		perror("could not open file");
+		perror();
 		exit(127);
 	}
 	signal(SIGINT, ctrlc);
+
 	while (1)
 	{
-		write(STDIN_FILENO, "$ ", 3);
+		write(1, "infinito $ ", 3);
 		buffer = NULL;
 		status = getline(&buffer, &size, stdin);
 		if (status < 0)
 		{
 			if (isatty(STDIN_FILENO) != 0 && isatty(STDOUT_FILENO) != 0)
 				putchar('\n');
+			perror("./shell");
 			free(buffer);
-			break;
+			return(NULL);
 		}
 		token = strtok(buffer, " \n\t");
 		exit_func(buffer);
 		if (fork() == 0)
 		{
-			execcheck = execve(token, argv, NULL);
+		execcheck = execve(token, argv, NULL);
 			if (execcheck == -1)
-				perror("./shell");
+			{
+			perror("./shell");
 				free(buffer);
 				exit(0);
+			}
 		}
 		else
 		{

@@ -6,7 +6,7 @@
 */
 int exit_func(char *my_str)
 {
-	if (_strcmp(my_str, "exit") == 0)
+	if (strcmp(my_str, "exit") == 0)
 	{
 		exit(0);
 	}
